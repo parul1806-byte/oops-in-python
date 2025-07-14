@@ -3,16 +3,25 @@ This repository contains **basic to advanced examples** of Object-Oriented Progr
 
 oops-in-python/
 ├── 01_constructor_examples/
-│   ├── program1_student.py
-│   ├── program2_rectangle_area.py
-│   ├── ...
-│   └── README.md
-├── 02_inheritance_examples/
-│   └── (future programs here)
-├── 03_encapsulation_examples/
-│   └── (future programs here)
-├── 04_polymorphism_examples/
-│   └── (future programs here)
+│ No. | Program Description |
+|-----|---------------------|
+| 1.  | Create student class and display name & roll number |
+| 2.  | Calculate area of a triangle |
+| 3.  | Check if a number is even or odd |
+| 4.  | Constructor with default argument |
+| 5.  | Sum of two numbers |
+| 6.  | Find square of a number |
+| 7.  | Store and print employee data |
+| 8.  | Convert Celsius to Fahrenheit |
+| 9.  | Accept 3 subject marks and calculate total |
+| 10. | Check voting eligibility using age |
+
+├── 02_inheritance_examples
+│   
+├── 03_encapsulation_examples
+│ 
+├── 04_polymorphism_examples
+│   
 ├── README.md   ← main project README
 # 🧠 OOPs in Python – Explained with Code
 
