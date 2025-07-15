@@ -1,3 +1,4 @@
+
 #✅ 1. Create a class with a constructor and print student details
 class Student():
     def __init__(self,name,roll_no,enroll_no,course,passing_year):
@@ -74,6 +75,17 @@ class Employee():
 employee_1 = Employee("rahul","5876287683","22,d ox flat")
 employee_1.add_record()
 
+#✅ 5. Class with constructor that converts Celsius to Fahrenheit
+class Temperature:
+    def __init__(self, celsius):
+        self.celsius = celsius
+
+    def to_fahrenheit(self):
+        f = (self.celsius * 9/5) + 32
+        print(f"{self.celsius}°C = {f}°F")
+
+t = Temperature(37)
+t.to_fahrenheit()
       
 
     
