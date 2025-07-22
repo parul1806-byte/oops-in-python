@@ -17,6 +17,65 @@ oops-in-python/
 | 10. | Check voting eligibility using age |
 
 ├── 02_inheritance_examples
+### 1. 🌡️ Temperature Sensor
+- Class: `TemperatureSensor`
+- Private: `__celsius`
+- Allow values only between `-50` and `150`
+- Getter: returns Celsius & Fahrenheit using `F = C × 9/5 + 32`
+- ❗ Bonus: Add temperature range error
+
+---
+
+### 2. 📧 Email Validator
+- Class: `Employee`
+- Private: `__email`
+- Conditions:
+  - Must contain `@`
+  - Must end with `.com`
+- Invalid emails are replaced with `"invalid@invalid.com"`
+- ❗ Bonus: No regex used — only string methods
+
+---
+
+### 3. 🧮 Quiz Score Tracker
+- Class: `Quiz`
+- Private: `__scores` (list)
+- Only allow scores from 0 to 10
+- Getter: show all scores
+- Method: `average()` returns average of scores
+- ❗ Bonus: Encapsulation on mutable lists
+
+---
+
+### 4. 🚗 Vehicle Speed Control
+- Class: `Vehicle`
+- Private: `__speed`
+- Speed range: `0–180`
+- If speed > 120 → print “Overspeeding!”
+- Method: `increase_speed(value)`
+- ❗ Bonus: Use setter logic from method
+
+---
+
+### 5. 🛒 Shopping Cart Quantity
+- Class: `CartItem`
+- Private:
+  - `__product_name` → Must be alphabetic
+  - `__quantity` → Must be between 1–10
+- Invalid product name or quantity → set default and print error
+- ❗ Bonus: Mixed validation — strings & numbers
+
+---
+
+## 🧠 Concepts Practiced
+
+- Private attributes (`__var`)
+- Data hiding
+- Setter validation logic
+- Read-only & computed properties (like Fahrenheit)
+- Class-level error handling
+- No regex used — pure Python string & number logic
+
 │   
 ├── 03_encapsulation_examples
 │ 
