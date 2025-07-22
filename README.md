@@ -17,6 +17,10 @@ oops-in-python/
 | 10. | Check voting eligibility using age |
 
 ├── 02_inheritance_examples
+
+
+
+├── 03_encapsulation_examples
 ### 1. 🌡️ Temperature Sensor
 - Class: `TemperatureSensor`
 - Private: `__celsius`
@@ -65,9 +69,7 @@ oops-in-python/
 - Invalid product name or quantity → set default and print error
 - ❗ Bonus: Mixed validation — strings & numbers
 
----
-
-## 🧠 Concepts Practiced
+---## 🧠 Concepts Practiced
 
 - Private attributes (`__var`)
 - Data hiding
@@ -77,7 +79,6 @@ oops-in-python/
 - No regex used — pure Python string & number logic
 
 │   
-├── 03_encapsulation_examples
 │ 
 ├── 04_polymorphism_examples
 │   
