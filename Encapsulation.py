@@ -1,3 +1,4 @@
+'''import random
 import warnings
 #Q1. Temperature Sensor
 #Creating a class TemperatureSensor with private variable __celsius.
@@ -234,5 +235,173 @@ student1 = student("parul", 102, 45)
 print(student1.name)
 print(student1.age)
 print(student1.marks)
+
+#9Password Validator :Creating a UserAccount class with private variable __password.
+class UserAccount():
+    def __init__(self,password):
+        self.password = password
+# getter to retun the password
+    @property
+    def password(self):
+        return self.__password
+#setter for conditions
+    @password.setter
+    def password(self,pas):
+        if (len(pas)>8 and
+                any(char.isalpha() for char in pas) and
+                any(char.isdigit() for char in pas) and
+                any(char in "@#$%" for char in pas)):
+            self.__password = pas
+            print(f"{pas}: it is a valid pass")
+        else:
+            print(f"{pas}:week password")
+
+user1 = UserAccount("parulpal16@")
+user2 = UserAccount("1234")
+
+#10 Parcel Weight Handler
+class Parcel():
+    def __init__(self,weight):
+        self.weight = weight
+#getter
+    @property
+    def weight(self):
+        return self.__weight
+#setter:Weight must be between 0.5kg and 50kg.
+    @weight.setter
+    def weight(self,mass):
+        if 0.5<= mass <= 50:
+            self.__weight = mass
+        else:
+            warnings.warn("invalid weight , weight must be in given range")
+# method for shipping cost
+    def shipping_cost(self):
+        cost = self.__weight*20
+        return cost
+parcel1 = Parcel(45)
+print("weight :",parcel1.weight)
+print("shopping cost",parcel1.shipping_cost())
+parcel2 = Parcel(56)
+
+#11 Booking Limit Tracker , Class: Booking with private var __seats.
+class Limit_Tracker():
+    def __init__(self):
+        self.seats = 0
+
+# getter
+    @property
+    def seats(self):
+        return self.__seats
+#setter
+    @seats.setter
+    def seats(self,limit):
+        if 0 <= limit <= 100:
+            self.__seats = limit
+        else:
+            print("limit exceeds")
+    def book(self,new_seats):
+        if self.__seats+new_seats > 100:
+            print("booking exceeds")
+        else:
+            self.__seats+= new_seats
+            print(f"total seat book:{self.__seats}")
+b1 = Limit_Tracker()
+b1.book(56)
+b1.book(20)
+b1.book(45)
+
+#12. Unique User ID Generator:Creating  User class with private __username.
+class User():
+    def __init__(self,user_name):
+        self.user_name = user_name
+#getter
+    @property
+    def user_name(self):
+        return self.__user_name
+#setter username must:Start with a letter,Be alphanumeric,Be at least 6 chars
+    @user_name.setter
+    def user_name(self,name):
+        if (len(name)>=6 and name[0].isalpha() and
+            any(char.isalpha() for char in name)and
+            any(char.isdigit() for char in name)):
+            self.__user_name = name
+            print(f"{name}:this user_name is 100% valid")
+        else:
+            print("invalid user_name")
+            self.__user_name = None
+
+
+    def Genrate_id(self):
+        if self.__user_name:
+            randon_num = random.randint(100,999)
+            return self.__user_name + str(randon_num)
+        else:
+            print("error")
+
+user1 = User("parul7088")
+print("ID:",user1.Genrate_id())
+user2 = User("parul")
+print("ID:",user2.Genrate_id())
+
+#13. Course Grade Average, Creating Course class with private __grades (a list).
+class Grade():
+    def __init__(self):
+        self.__grades = []# empty lis
+# getter to get the grades
+    @property
+    def grades(self):
+        return self.__grades
+#setter method to add the grades
+    def Add_Grades(self,marks):
+        if marks in range(0,101):
+            self.__grades.append(marks)
+            print(f"{marks}:added")
+        else:
+            print("Invalid marks")
+
+# method for average
+    def Avg(self):
+        if self.__grades:
+            return sum(self.__grades)/len(self.__grades)
+        else:
+            warnings.warn("Error!!! , marks should be range of 0 to 100")
+s1 = Grade()
+s1.Add_Grades(67)
+s1.Add_Grades(45)
+s1.Add_Grades(21)
+print("GRADES:",s1.grades)
+print("average:",s1.Avg())
+'''
+
+#14Login Attempts Blocker:Class: LoginSystem
+class LoginSystem():
+    def __init__(self,password):
+        self.__password = password
+        self.attempts = 0
+    @property
+    def password(self):
+        return self.__password
+    def login(self,input_password):
+        if self.attempts > 3 :
+            print("blocked")
+            return
+        if input_password == self.__password:
+            print("password accepted")
+            self.attempts = 0
+        else:
+            self.attempts += 1
+            print("wrong password")
+            if self.attempts == 3 :
+                print("blocked")
+person1 = LoginSystem("12345@@")
+print("password for person1:",person1.password)
+person1.login("1234")
+person1.login("4567")
+person1.login("12345@@")
+
+
+
+
+
 
 
