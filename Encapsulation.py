@@ -1,4 +1,4 @@
-'''import random
+import random
 import warnings
 #Q1. Temperature Sensor
 #Creating a class TemperatureSensor with private variable __celsius.
@@ -371,7 +371,7 @@ s1.Add_Grades(45)
 s1.Add_Grades(21)
 print("GRADES:",s1.grades)
 print("average:",s1.Avg())
-'''
+
 
 #14Login Attempts Blocker:Class: LoginSystem
 class LoginSystem():
