@@ -125,11 +125,90 @@ class calenderRemainder():
     def set_remainder(self,event):
           print(f"Remainder set for the event:{event}")
 class Assistant(weather,calenderRemainder):
-    def display_info(self):
-        print("assisting wheather and remainder")
-        self.get_weather()
-        self.set_remainder()
+    def display_info(self,location,event):
+        print("assisting weather and remainder")
+        self.get_weather(location)
+        self.set_remainder(event)
 obj = Assistant()
-obj.get_weather("delhi")
-obj.set_remainder("cricket")
-obj.display_info()
+obj.display_info("delhi","cricket")
+
+#9.Online Shopping App
+class Cart():
+    def __init__(self):
+        self.cart_item = []# empty list to store item into cart
+    def add_to_cart(self,item):
+        self.cart_item.append(item)
+        print(f"{item}: has bee add to cart")
+    def show_cart(self):
+         print("cart updated:",self.cart_item)
+
+class Payment():
+    def __init__(self,amount):
+        self.amount = amount
+    def marked_payment(self):
+        print(f"{self.amount}:payed")
+
+class online_store(Cart,Payment):
+    def __init__(self, amount):
+         Cart.__init__(self)  # Initialize Cart class
+         Payment.__init__(self, amount)  # Initialize Payment class
+
+    def show_oder(self):
+        print("your oder")
+        self.show_cart()
+        self.marked_payment()
+
+item = online_store(500)
+item.add_to_cart("water")
+item.add_to_cart("rice")
+item.add_to_cart("dress")
+item.add_to_cart("pen")
+item.show_oder()
+
+#10. Hospital Management System
+class UserInfo():
+    def __init__(self,username,email):
+        self.username = username
+        self.email = email
+    def user_info(self):
+        print(f"User name:{self.username}\nEmail:{self.email}")
+class Activity():
+    def __init__(self):
+        self.activity = []# empty list to store activity
+    def Post_Activity(self,activity):
+        return self.activity.append(activity)
+class UserProfile(UserInfo,Activity):
+      def __init__(self,username,email):
+          UserInfo.__init__(self,username,email)
+          Activity.__init__(self)
+      def user_activity(self):
+        print("----------------user activity----------------")
+        self.user_info()
+        print("last activities")
+        for act in self.activity[-3:]:
+            print(f"{act}")
+
+user = UserProfile("parul","parulpal7088@gmail.com")
+user.Post_Activity("post a story")
+user.Post_Activity("like a photo")
+user.Post_Activity("commt on a post")
+user.Post_Activity("like a reel")
+user.Post_Activity("sent a photo")
+user.user_activity()
+
+#11. Vehicle Assistant System
+class navigation_system():
+    def get_direction(self,destination):
+        print(f"on the way to :{destination}")
+class song():
+    def music(self,songname):
+        print(f"song playing:{songname}")
+class carAI(navigation_system,song):
+    def start_trip(self,destination,songname):
+        print("----------trip start----------")
+        self.get_direction(destination)
+        self.music(songname)
+        print("--------------------------")
+
+car = carAI()
+car.start_trip("goa","on my way")
